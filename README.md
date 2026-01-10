@@ -105,10 +105,10 @@ The device outputs a standard JSON string every second:
 ### Wiring Diagram
 
 ```text
-RPI PICO W                        SSD1306 OLED (I2C)
+            RPI PICO W                        SSD1306 OLED (I2C)
           _________________                   _________________
          |                 |                 |                 |
-         |             VBUS|---[ 5V ]--------|                 |
+         |             VBUS|                 |                 |
          |              GND|---[ GND]--------|GND              |
          |          3V3_OUT|---[ 3V3]--------|VCC              |
          |                 |                 |                 |
