@@ -116,6 +116,9 @@ The device outputs a standard JSON string every second:
 
 **Project maintained by Andrew Armstrong.** *For hardware schematics or deployment logs, please refer to the `/docs` folder.*
 
+## ⚠️ Disclaimer
+This project is for educational and hobbyist purposes only. While Air-Sentinel OS is designed for precision, it is not a life-safety device. The author (Andrew Armstrong) is not responsible for any hardware damage, property loss, or health issues resulting from the use of this software or reliance on its readings. Always maintain manual oversight of high-voltage hardware.
+
 ## ⚖️ License
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
@@ -126,6 +129,8 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial-
 * 🔄 **ShareAlike:** Any modifications you share must be released under the same license.
 
 For commercial licensing inquiries, please contact Andrew Armstrong directly.
+
+
 
 ---
 
