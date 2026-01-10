@@ -101,6 +101,50 @@ The device outputs a standard JSON string every second:
   "auto": true
 }
 
+### Wiring Diagram
+
+```text
+RPI PICO W                        SSD1306 OLED (I2C)
+          _________________                   _________________
+         |                 |                 |                 |
+         |             VBUS|---[ 5V ]--------|                 |
+         |              GND|---[ GND]--------|GND              |
+         |          3V3_OUT|---[ 3V3]--------|VCC              |
+         |                 |                 |                 |
+         |        GP0 (SDA)|-----------------|SDA              |
+         |        GP1 (SCL)|-----------------|SCL              |
+         |_________________|                 |_________________|
+                 |
+                 |                             PPD42NS SENSOR
+                 |                            _________________
+                 |                           |                 |
+                 |----[ 5V ]-----------------|Pin 1 (VCC)      |
+                 |                           |                 |
+                 |----[GP26]-----------------|Pin 2 (LED Trig) |
+                 |                           |                 |
+                 |----[GND ]-----------------|Pin 3 (GND)      |
+                 |           ___             |                 |
+                 |----[GP27]|_R*_|-----------|Pin 4 (Output)   |
+                 |___________________________|_________________|
+                               |
+                        [ 10uF Capacitor* ]
+                        (Between VCC & GND)
+
+*May already be included in your module
+
+```
+
+### Connectivity Reference
+
+Pico W Pin	Component	Function	Notes
+VBUS	PPD42NS	5V Power	Essential for the sensor heater.
+3V3_OUT	SSD1306	3.3V Power	Standard logic level for OLED.
+GND	Both	Ground	Ensure a common ground for all.
+GP0	SSD1306	I2C SDA	Data line for display.
+GP1	SSD1306	I2C SCL	Clock line for display.
+GP26	PPD42NS	LED Control	Triggers the internal IR LED.
+GP27	PPD42NS	ADC Input	Measures the analog voltage drop
+
 ```
 
 ---
@@ -129,9 +173,3 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial-
 * 🔄 **ShareAlike:** Any modifications you share must be released under the same license.
 
 For commercial licensing inquiries, please contact Andrew Armstrong directly.
-
-
-
----
-
-Would you like me to refine the technical description of the PPD42NS sampling math, or should I create a sample `config.json` for your documentation?
