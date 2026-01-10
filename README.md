@@ -101,6 +101,7 @@ The device outputs a standard JSON string every second:
   "auto": true
 }
 
+```
 ### Wiring Diagram
 
 ```text
