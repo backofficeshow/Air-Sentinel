@@ -5,6 +5,8 @@
 
 An engineering-grade environmental monitor and automation controller built for the **Raspberry Pi Pico W**. Air-Sentinel bridges the gap between raw particulate sensing and actionable hardware responses, featuring a robust calibration engine, real-time telemetry, and localized weather correlation.
 
+![Air-Sentinel](https://github.com/user-attachments/assets/e91c1665-0127-4fee-84d8-f2381f86fbb1)
+
 ## 🚀 Key Features
 
 * **Precision AQI Sensing:** High-fidelity sampling of PM2.5 particulates using the PPD42NS sensor with adjustable voltage offsets.
