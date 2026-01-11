@@ -118,8 +118,8 @@ def run_setup_ap():
     while True:
         oled.fill(0)
         oled.text("AirSentinel_AP", 0, 0)
-        oled.text("pass: password123", 0, 12)
-        oled.text("IP: 192.168.4.1", 0, 24)
+        oled.text("pass:password123", 0, 12)
+        oled.text("IP:192.168.4.1", 0, 24)
         oled.show()
         try:
             cl, addr = s.accept(); req = cl.recv(1024).decode('utf-8')
