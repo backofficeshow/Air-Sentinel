@@ -1,5 +1,5 @@
 """
-AIR-SENTINEL OS v2.6
+AIR-SENTINEL OS v2.7
 (c) 2026 Andrew Armstrong
 
 DESCRIPTION:
@@ -89,15 +89,16 @@ def load_config():
         save_config() # This triggers the creation of a fresh config.json with state['config'] defaults
 
 def save_config(ssid=None, password=None, lat=None, lon=None, auto=None, offset=None):
-    if ssid is not None: state["config"]["ssid"] = ssid
-    if password is not None: state["config"]["pass"] = password
-    if lat is not None: state["config"]["lat"] = lat
-    if lon is not None: state["config"]["lon"] = lon
+    if ssid is not None: state["config"]["ssid"] = ssid.strip() # Remove hidden spaces
+    if password is not None: state["config"]["pass"] = password.strip()
+    if lat is not None: state["config"]["lat"] = lat.strip()
+    if lon is not None: state["config"]["lon"] = lon.strip()
     if auto is not None: state["config"]["auto"] = auto
     if offset is not None: 
         state["config"]["offset"] = float(offset); log_calibration(float(offset))
     try:
         with open(CONFIG_FILE, 'w') as f: json.dump(state["config"], f)
+        print("Config saved and sanitized.") # Confirmation
     except: pass
 
 def url_decode(s):
